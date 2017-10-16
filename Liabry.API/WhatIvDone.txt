@@ -1,0 +1,26 @@
+﻿added EF
+added EF tools
+added some Entities 
+created db context
+created a EF seed
+changed starup to read appsetting.json files
+changed startup to populate EF with seed
+
+created a repo
+
+created a controller with routing
+created a GET method
+created a DTO
+changed statup to use auto mapper
+created automapper convention to tell it how to map to none matching fields.
+used the automapper in the controller get method
+
+added status codes to get methods such as 404 on get by id 
+added global exception handling in startup (using a lambda) you would want to use a class here instead so we can do more complex thing such as reporting to a server/log file
+added controller wich was child of prevouise controller /a/{aId}/b
+added dto for it
+added automapper capable of dealing with object children
+
+Content negotiation (tell client we accept json/xml) using accept header, return only if we support the type 
+
+
