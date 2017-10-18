@@ -33,6 +33,7 @@ namespace Library.API
             services.AddMvc(setupAction =>
             {
                 setupAction.ReturnHttpNotAcceptable = true;
+                setupAction.InputFormatters.Add(new XmlDataContractSerializerInputFormatter());
                 setupAction.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
             });
 
@@ -72,6 +73,10 @@ namespace Library.API
                             => src.DateOfBirth.GetCurrentAge()));
 
                 cfg.CreateMap<Book, BookDto>();
+
+                cfg.CreateMap<Models.AuthorsForCreationDto, Author>();
+
+                cfg.CreateMap<Models.BookForCreationDto, Book>();
             });
 
             libraryContext.EnsureSeedDataForContext();

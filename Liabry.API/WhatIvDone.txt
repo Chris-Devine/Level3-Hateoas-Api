@@ -3,7 +3,7 @@ added EF tools
 added some Entities 
 created db context
 created a EF seed
-changed starup to read appsetting.json files
+changed startup to read appsetting.json files
 changed startup to populate EF with seed
 
 created a repo
@@ -11,16 +11,27 @@ created a repo
 created a controller with routing
 created a GET method
 created a DTO
-changed statup to use auto mapper
-created automapper convention to tell it how to map to none matching fields.
-used the automapper in the controller get method
+changed startup to use auto mapper
+created auto-mapper convention to tell it how to map to none matching fields.
+used the auto-mapper in the controller get method
 
 added status codes to get methods such as 404 on get by id 
 added global exception handling in startup (using a lambda) you would want to use a class here instead so we can do more complex thing such as reporting to a server/log file
-added controller wich was child of prevouise controller /a/{aId}/b
+added controller which was child of previous controller /a/{aId}/b
 added dto for it
-added automapper capable of dealing with object children
+added auto-mapper capable of dealing with object children
 
 Content negotiation (tell client we accept json/xml) using accept header, return only if we support the type 
 
+safety and method idempotency (methods that are safe when it does not change the method resource representation and an a method is idempotency if its called multiple time it has the same result)
 
+added a create method to controllers
+used CreatedAtRoute for posts
+
+Creating a child resource with parent recourse, calling parent resource only
+
+Create and get a list of a resource while also returning their ids as urls (using modelbinder, can be seen in helper methods)
+
+Block requests to posts that pass the id of the thing their trying to create and return a 409/404 depending on logic as seen in authors controller
+
+added inputformatters for xml
